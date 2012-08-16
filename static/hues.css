@@ -17,13 +17,7 @@ section {
 	margin: 0 auto;
 }
 #cover {
-    margin-top: 15px;
     margin-left: -15px;
-}
-section a, section img {
-	display: block;
-	text-decoration: none;
-	border: 0;
 }
 
 .special-text { 
@@ -46,7 +40,6 @@ a, a:visited {
 h1,h2,h3 {
     font-size: 28px; 
     margin-top: 37px; 
-    text-transform: uppercase; 
     font-weight: normal;
     letter-spacing: 2px;
 }
@@ -65,6 +58,10 @@ div.grid {
     float: left; 
     height: 160px; 
     width: 250px;
+}
+div.grid a {
+    display: block;
+    text-decoration: none;
 }
 p { 
     font-size: 13px;
