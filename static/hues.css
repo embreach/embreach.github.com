@@ -39,7 +39,6 @@ a, a:visited {
 
 h1,h2,h3 {
     font-size: 28px; 
-    margin-top: 37px; 
     font-weight: normal;
     letter-spacing: 2px;
 }
@@ -55,9 +54,12 @@ h3 { font-size: 16px; margin-top: 20px; margin-bottom: 5px;}
 */
 
 div.grid { 
-    float: left; 
-    height: 160px; 
+    float: left;
+    height: 80px;
     width: 250px;
+}
+.contacts div.grid {
+    height: 160px;
 }
 div.grid a {
     display: block;
@@ -71,5 +73,6 @@ p {
 
 footer { 
     clear: both;
-    margin: 75px 0 30px 0;
+    padding-top: 15px;
+    margin-bottom: 30px;
 }
