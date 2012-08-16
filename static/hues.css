@@ -43,19 +43,7 @@ a, a:visited {
     font-weight: 90%;
 }
 
-#player { 
-    font-size: 18px; 
-    padding-top: 12px;
-    margin-bottom: 15px;
-}
-/*
-#player div {
-    float: left;
-}
-*/
-
-#track-title {  letter-spacing: 1.5px; padding-left: 10px; margin-top: -2px; }
-h1,h2,h3 { 
+h1,h2,h3 {
     font-size: 28px; 
     margin-top: 37px; 
     text-transform: uppercase; 
