@@ -1,0 +1,90 @@
+body {
+    background: url('http://www.birdsdontfly.fi/embreach/bg_image.jpg') no-repeat #111;
+	background-attachment:fixed;
+    text-align: center;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	color: #C1C0AC;
+	padding: 0;
+	margin: 0;
+	font-spacing: 1.1px;
+}
+section {
+	text-align: left;
+	width: 500px;
+	padding-top: 25px;
+	padding-left: 15px;
+	margin: 0 auto;
+}
+#cover {
+    margin-top: 15px;
+    margin-left: -15px;
+}
+section a, section img {
+	display: block;
+	text-decoration: none;
+	border: 0;
+}
+
+.special-text { 
+    color: #b85744;
+}
+
+a, a:visited { 
+    color: #518085;
+}
+
+#wallpaper { 
+    text-decoration: none;
+    color: #605f53 !important; 
+    float: right; 
+    padding-right: 5px;
+    letter-spacing: 0.9px;
+    font-weight: 90%;
+}
+
+#player { 
+    font-size: 18px; 
+    padding-top: 12px;
+    margin-bottom: 15px;
+}
+/*
+#player div {
+    float: left;
+}
+*/
+
+#track-title {  letter-spacing: 1.5px; padding-left: 10px; margin-top: -2px; }
+h1,h2,h3 { 
+    font-size: 28px; 
+    margin-top: 37px; 
+    text-transform: uppercase; 
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+h1 { margin-top: 5px; margin-bottom: 10px; }
+h2 { font-size: 22px; }
+h3 { font-size: 16px; margin-top: 20px; margin-bottom: 5px;}
+/*
+#soundcloud {
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+}
+*/
+
+div.grid { 
+    float: left; 
+    height: 160px; 
+    width: 250px;
+}
+p { 
+    font-size: 13px;
+    line-height: 150%;
+    letter-spacing: 1.5px;
+}
+
+footer { 
+    clear: both;
+    margin: 75px 0 30px 0;
+}
