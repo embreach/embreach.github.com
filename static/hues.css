@@ -1,5 +1,5 @@
 body {
-    background: url('http://www.birdsdontfly.fi/embreach/bg_image.jpg') no-repeat #111;
+    background: url('/static/bg_image.jpg') no-repeat #111;
 	background-attachment:fixed;
     text-align: center;
 	font-family: Arial, sans-serif;
