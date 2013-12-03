@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Embreach</title>
+  </head>
+  <body>
+    <script src="https://connect.soundcloud.com/sdk.js"></script>
+    <script>
+      SC.initialize({
+        client_id: '34651ca078f5adf77323b80bc915596b'
+      });
+      SC.stream("/tracks/293", function(sound){
+        sound.play();
+      });
+    </script>
+  </body>
+</html>
+
+
+
