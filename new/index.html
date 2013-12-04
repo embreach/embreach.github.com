@@ -3,38 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>Embreach</title>
-    <style type="text/css">
-      body {
-        margin: 0;
-        font-family: 'Courier New', Courier, monospaced;
-      }
-      h1, h2 {
-        font-weight: normal;
-        letter-spacing: 0.5em;
-      }
-      h1 {
-        text-transform: uppercase;
-      }
-      footer > ul {
-        padding: 0;
-      }
-      footer > ul > li {
-        list-style: none;
-        display: inline-block;
-      }
-    </style>
+    <link rel="stylesheet" href="embreach.css"/>
   </head>
   <body>
     <script src="https://connect.soundcloud.com/sdk.js"></script>
-    <script>
-      var playlist = '1305267'
-      SC.initialize({
-        client_id: '34651ca078f5adf77323b80bc915596b'
-      });
-      SC.get('/playlists/' + playlist + '.json', function(hep) {
-        console.log("Got", hep)
-      })
-    </script>
+    <script src="embreach.js"></script>
 
     <h1>Embreach</h1>
     <h2>Hues of Red remixes</h2>
