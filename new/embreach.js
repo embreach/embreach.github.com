@@ -6,6 +6,9 @@ SC.get('/playlists/' + playlist, function(playlist) {
   $('#tracks').empty()
   $(playlist.tracks).each(function(index, track) {
     var week = index + 1
-    $('#tracks').append('<li class="track"><span class="week">Week ' + week + '</span> ' + track.title + '</li>')
+    $('#tracks').append('<li class="track"><span class="week">Week ' + week + '</span> <a href="#">' + track.title + '</a></li>')
+  })
+  $('#tracks a').on('click', function() {
+    console.log("CLICK")
   })
 })
