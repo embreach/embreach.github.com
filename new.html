@@ -27,12 +27,13 @@
   <body>
     <script src="https://connect.soundcloud.com/sdk.js"></script>
     <script>
+      var playlist = '1305267'
       SC.initialize({
         client_id: '34651ca078f5adf77323b80bc915596b'
       });
-      SC.stream("/tracks/293", function(sound){
-        sound.play();
-      });
+      SC.get('/playlists/' + playlist + '.json', function(hep) {
+        console.log("Got", hep)
+      })
     </script>
 
     <h1>Embreach</h1>
