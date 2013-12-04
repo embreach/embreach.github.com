@@ -2,12 +2,12 @@ body {
   margin: 30px;
   font-family: 'Courier New', Courier, monospaced;
 }
+h1 {
+  text-transform: uppercase;
+}
 h1, h2 {
   font-weight: normal;
   letter-spacing: 0.5em;
-}
-h1 {
-  text-transform: uppercase;
 }
 a {
   color: blue;
