@@ -6,9 +6,14 @@ SC.get('/playlists/' + playlist, function(playlist) {
   $('#tracks').empty()
   $(playlist.tracks).each(function(index, track) {
     var week = index + 1
-    $('#tracks').append('<li class="track"><span class="week">Week ' + week + '</span> <a href="#">' + track.title + '</a></li>')
+    console.log("Got", track)
+    var element = $('<li class="track"><span class="week">Week ' + week + '</span> <a href="#">' + track.title + '</a></li>')
+    element.data('track-id', track.id)
+    $('#tracks').append(element)
   })
-  $('#tracks a').on('click', function() {
-    console.log("CLICK")
+  $('#tracks li').on('click', function() {
+    SC.stream("/tracks/" + $(this).data('track-id'), function(sound){
+      sound.play();
+    });
   })
 })
