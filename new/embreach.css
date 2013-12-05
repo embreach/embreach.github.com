@@ -20,4 +20,5 @@ a {
 .link-list > li {
   list-style: none;
   display: inline-block;
+  margin-right: 5px;
 }
