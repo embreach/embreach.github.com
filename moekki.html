@@ -12,12 +12,12 @@
   <body>
     <!--
       TODO
-      - full width
       - loading indicator
       - analytics
       - hide YT logo altogether?
       - react to video ending (show something instead of showing the play button)
       - ability to re-play teaser
+      - check og-stuff (for FB/twitter sharing)
     -->
 
     <div id="player"></div>
@@ -39,8 +39,11 @@
             modestbranding: 1
           }
         });
+
+        fluidvids.init()
       }
     </script>
+    <script src="static/fluidvids.js"></script>
   </body>
 </html>
 
