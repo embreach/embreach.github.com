@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Embreach</title>
+    <link rel="stylesheet" href="static/moekki.css"/>
+    <!--<meta property="og:image" content="http://embreach.net/static/hues_of_red_remixes_cover.jpg"/>-->
+    <meta name="google-site-verification" content="yerLxagEareYdZQ1pa0CFPdtxe2HtBiTvEOBkVcm-iw" />
+    <link rel="shortcut icon" href="static/favicon.png">
+    <link rel="apple-itouch-icon" href="static/favicon.png">
+  </head>
+  <body>
+    <!--
+      TODO
+      - full width
+      - loading indicator
+      - analytics
+    -->
+
+
+    <div id="player"></div>
+
+    <script>
+      var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      function onYouTubeIframeAPIReady() {
+        new YT.Player('player', {
+          videoId: '4jYiwY3hAKU',
+          playerVars: {
+            autoplay: 1,
+            controls: 0,
+            rel: 0,
+            showinfo: 0,
+            modestbranding: 1
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
+
+
+
