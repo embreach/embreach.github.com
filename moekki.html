@@ -49,7 +49,7 @@
 
       function onYouTubeIframeAPIReady() {
         var videoId = 'Axk8bEGdahw'
-        new YT.Player('player', {
+        var player = new YT.Player('player', {
           videoId: videoId,
           playerVars: {
             autoplay: 1,
@@ -59,8 +59,25 @@
             showinfo: 0,
             modestbranding: 1,
             playlist: videoId
+          },
+          events: {
+             onStateChange: function(event) {
+              if (event.data === YT.PlayerState.PLAYING) {
+                console.log("Playing")
+              } else if (event.data === YT.PlayerState.PAUSED) {
+                console.log("Paused")
+              } else if (event.data === YT.PlayerState.ENDED) {
+                console.log("Done playing")
+              }
+            },
+            onReady: function() {
+              console.log("READY!", arguments, player.getPlayerState())
+            }
           }
         });
+        setInterval(function() {
+          console.log("Loaded", player.getVideoLoadedFraction ? player.getVideoLoadedFraction(): null)
+        }, 300)
 
         fluidvids.init()
       }
