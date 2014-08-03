@@ -15,6 +15,13 @@ body {
   text-transform: uppercase;
 }
 
+section {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000
+}
+
 ul {
   list-style: none;
   margin: 0;

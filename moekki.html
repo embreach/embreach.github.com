@@ -33,13 +33,12 @@
       - iPhone issues:
         - plays in "default player" - maybe that's fine?
     -->
+    <section id="hideablePlayer">
+      <div id="player"></div>
+    </section>
 
     <section id="loading">
       Loading The Mökki Experiment <span class="blink">...</span>
-    </section>
-
-    <section id="hideablePlayer" style="display: none">
-      <div id="player"></div>
     </section>
 
     <section id="watched" style="display: none">
@@ -65,6 +64,13 @@
         player.playVideo()
       }
 
+      function playing() {
+        console.log("Playing")
+        document.getElementById('loading').style.display = "none";
+        document.getElementById('hideablePlayer').style.display = "block";
+        document.getElementById('watched').style.display = "none";
+      }
+
       function onYouTubeIframeAPIReady() {
         var videoId = 'Axk8bEGdahw'
         player = new YT.Player('player', {
@@ -80,11 +86,7 @@
           events: {
              onStateChange: function(event) {
               if (event.data === YT.PlayerState.PLAYING) {
-                console.log("Playing")
-
-                document.getElementById('loading').style.display = "none";
-                document.getElementById('hideablePlayer').style.display = "block";
-                document.getElementById('watched').style.display = "none";
+                playing()
               } else if (event.data === YT.PlayerState.PAUSED) {
                 console.log("Paused")
               } else if (event.data === YT.PlayerState.ENDED) {
@@ -95,6 +97,9 @@
             },
             onReady: function() {
               console.log("Ready!", arguments, player.getPlayerState())
+              if(player.getPlayerState() === YT.PlayerState.PLAYING) {
+                playing()
+              }
             }
           }
         });
