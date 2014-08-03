@@ -15,18 +15,16 @@
   <body>
     <!--
       TODO
+      - When has TTF font been loaded?
       - Cross-platform testing:
         - .TTF font (vs fallback)
         - YouTube video
 
       - center video vertically, plus add some padding
-      - custom loading indicator?
       - hide YT specifics
         - hide logo with overlay?
         - disable controls with overlay?
         - react to player events -> don't show loading spinner?
-      - react to video ending (show something instead of showing the play button)
-      - ability to re-play teaser
       - check og-stuff (for FB/twitter sharing)
         - custom image plz!
       - check occasional 404 errors
@@ -36,9 +34,23 @@
         - plays in "default player" - maybe that's fine?
     -->
 
-    <h1>THE MÖKKI EXPERIMENT</h1>
+    <section id="loading">
+      Loading The Mökki Experiment <span class="blink">...</span>
+    </section>
 
-    <div id="player"></div>
+    <section id="hideablePlayer" style="display: none">
+      <div id="player"></div>
+    </section>
+
+    <section id="watched" style="display: none">
+      Stay tuned for 18.08.2014!
+
+      <ul>
+        <li><a href="javascript:replay()">Re-play teaser</a></li>
+        <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fembreach.net%2Fmoekki.html">Share on Facebook</a></li>
+        <li><a href="https://twitter.com/intent/tweet?text=The%20M%C3%B6kki%20Experiment%20by%20%40embreachband.%20Out%20on%2018.8.2014&url=http%3A%2F%2Fembreach.net%2Fmoekki.html&hashtags=embreach">Share on Twitter</a></li>
+      </ul>
+    </section>
 
     <script src="static/fluidvids.js"></script>
     <script>
@@ -47,38 +59,46 @@
       var firstScriptTag = document.getElementsByTagName('script')[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
+      var player;
+
+      function replay() {
+        player.playVideo()
+      }
+
       function onYouTubeIframeAPIReady() {
         var videoId = 'Axk8bEGdahw'
-        var player = new YT.Player('player', {
+        player = new YT.Player('player', {
           videoId: videoId,
           playerVars: {
             autoplay: 1,
-            loop: 1,
+            loop: 0,
             controls: 0,
             rel: 0,
             showinfo: 0,
             modestbranding: 1,
-            playlist: videoId
+            start: 40
           },
           events: {
              onStateChange: function(event) {
               if (event.data === YT.PlayerState.PLAYING) {
                 console.log("Playing")
+
+                document.getElementById('loading').style.display = "none";
+                document.getElementById('hideablePlayer').style.display = "block";
+                document.getElementById('watched').style.display = "none";
               } else if (event.data === YT.PlayerState.PAUSED) {
                 console.log("Paused")
               } else if (event.data === YT.PlayerState.ENDED) {
                 console.log("Done playing")
+                document.getElementById('hideablePlayer').style.display = "none";
+                document.getElementById('watched').style.display = "block";
               }
             },
             onReady: function() {
-              console.log("READY!", arguments, player.getPlayerState())
+              console.log("Ready!", arguments, player.getPlayerState())
             }
           }
         });
-        setInterval(function() {
-          console.log("Loaded", player.getVideoLoadedFraction ? player.getVideoLoadedFraction(): null)
-        }, 300)
-
         fluidvids.init()
       }
     </script>

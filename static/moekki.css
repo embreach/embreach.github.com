@@ -1,3 +1,5 @@
+/* CGA Colors, baby: http://en.wikipedia.org/wiki/Color_Graphics_Adapter */
+
 @font-face {
   font-family: vcr;
   src: url(vcr_osd_mono.ttf);
@@ -5,9 +7,35 @@
 
 body {
   background-color: #000;
-  margin: 0;
+
   font-family: vcr;
-  color: #fff;
   font-size: 2em;
-  text-shadow: 0.2em 0.2em #00117d;
+  color: #fff;
+  text-shadow: 0.05em 0.05em #FF55FF;
+  text-transform: uppercase;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #55FFFF;
+}
+
+@keyframes blink {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-webkit-keyframes blink {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.blink {
+  -webkit-animation: blink 1.0s linear infinite;
+  -moz-animation: blink 1.0s linear infinite;
+  animation: blink 1.0s linear infinite;
 }
