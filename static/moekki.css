@@ -8,4 +8,6 @@ body {
   margin: 0;
   font-family: vcr;
   color: #fff;
+  font-size: 2em;
+  text-shadow: 0.2em 0.2em #00117d;
 }
