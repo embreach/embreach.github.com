@@ -26,6 +26,10 @@ a {
   color: #55FFFF;
 }
 
+p:first-child {
+  margin-top: 0;
+}
+
 @keyframes blink {
   0% { opacity: 0; }
   100% { opacity: 1; }
