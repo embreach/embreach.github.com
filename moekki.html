@@ -27,7 +27,7 @@
     <section id="arrival">
       <p>Embreach: The Mökki Experiment</p>
 
-      <p>Loading ...</p>
+      <p class="blink">Loading ...</p>
     </section>
 
     <section id="watched" style="display: none">
@@ -36,7 +36,7 @@
       <ul>
         <li><a href="javascript:play()">Re-play teaser</a></li>
         <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fembreach.net%2Fmoekki.html" target="_blank">Share on Facebook</a></li>
-        <li><a href="https://twitter.com/intent/tweet?text=The%20M%C3%B6kki%20Experiment%20by%20%40embreachband.%20Out%20on%2018.8.2014&url=http%3A%2F%2Fembreach.net%2Fmoekki.html&hashtags=embreach" target="_blank">Share on Twitter</a></li>
+        <li><a href="https://twitter.com/intent/tweet?text=The%20M%C3%B6kki%20Experiment%20by%20%40embreachband.%20Out%20on%2018.8.2014.&url=http%3A%2F%2Fembreach.net%2Fmoekki.html&hashtags=embreach" target="_blank">Share on Twitter</a></li>
       </ul>
     </section>
 
@@ -84,7 +84,7 @@
               }
             },
             onReady: function() {
-              console.log("Ready!", arguments, player.getPlayerState())
+              console.log("Ready!")
               document.getElementById('arrival').style.display = "none";
             }
           }
