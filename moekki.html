@@ -16,7 +16,6 @@
   <body>
     <!--
       TODO
-      - Font size on mobile
       - Loading->play on iPhone
 
       - When has TTF font been loaded?
@@ -43,11 +42,7 @@
     <section id="arrival">
       <p>Embreach: The Mökki Experiment</p>
 
-      <p id="loading" class="blink">Loading ...</p>
-
-      <p id="loaded" style="display: none">
-        <a href="javascript:play()" class="blink">Loaded, click here to play!</a>
-      </p>
+      <p>Loading ...</p>
     </section>
 
     <section id="watched" style="display: none">
@@ -75,7 +70,6 @@
 
       function playing() {
         console.log("Playing")
-        document.getElementById('arrival').style.display = "none";
         document.getElementById('hideablePlayer').style.display = "block";
         document.getElementById('watched').style.display = "none";
       }
@@ -85,7 +79,7 @@
         player = new YT.Player('player', {
           videoId: videoId,
           playerVars: {
-            autoplay: 0,
+            autoplay: 1,
             loop: 0,
             controls: 0,
             rel: 0,
@@ -106,8 +100,7 @@
             },
             onReady: function() {
               console.log("Ready!", arguments, player.getPlayerState())
-              document.getElementById('loading').style.display = "none";
-              document.getElementById('loaded').style.display = "block";
+              document.getElementById('arrival').style.display = "none";
             }
           }
         });
