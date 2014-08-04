@@ -51,6 +51,21 @@ p:nth-child(2) {
   text-shadow: 0.05em 0.05em #FF55FF;
 }
 
+#hideablePlayer {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  padding-top: 56.25%;
+}
+
+#player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 @keyframes blink {
   0% { opacity: 0; }
   100% { opacity: 1; }

@@ -18,7 +18,7 @@
       TODO
       - remove moekki(.html) references in this page
     -->
-    <div id="hideablePlayer" style="position: relative; width: 100%; max-height: 100%; padding-top: 56.25%;">
+    <div id="hideablePlayer">
       <div id="player"></div>
     </div>
 
@@ -82,13 +82,6 @@
             },
             onReady: function() {
               console.log("Ready!")
-
-              var playerStyle = document.getElementById('player').style
-              playerStyle.position = "absolute"
-              playerStyle.top = 0
-              playerStyle.left = 0
-              playerStyle.width = "100%"
-              playerStyle.height = "100%"
 
               document.getElementById('arrival').style.display = "none"
             }
