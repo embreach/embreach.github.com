@@ -40,15 +40,21 @@
       <div id="player"></div>
     </div>
 
-    <section id="loading">
-      Loading The Mökki Experiment <span class="blink">...</span>
+    <section id="arrival">
+      <p>Embreach: The Mökki Experiment</p>
+
+      <p id="loading" class="blink">Loading ...</p>
+
+      <p id="loaded" style="display: none">
+        <a href="javascript:play()" class="blink">Loaded, click here to play!</a>
+      </p>
     </section>
 
     <section id="watched" style="display: none">
       <p>Embreach: The Mökki Experiment</p>
       <p>In the distant future - 18.8.2014</p>
       <ul>
-        <li><a href="javascript:replay()">Re-play teaser</a></li>
+        <li><a href="javascript:play()">Re-play teaser</a></li>
         <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fembreach.net%2Fmoekki.html" target="_blank">Share on Facebook</a></li>
         <li><a href="https://twitter.com/intent/tweet?text=The%20M%C3%B6kki%20Experiment%20by%20%40embreachband.%20Out%20on%2018.8.2014&url=http%3A%2F%2Fembreach.net%2Fmoekki.html&hashtags=embreach" target="_blank">Share on Twitter</a></li>
       </ul>
@@ -63,13 +69,13 @@
 
       var player;
 
-      function replay() {
+      function play() {
         player.playVideo()
       }
 
       function playing() {
         console.log("Playing")
-        document.getElementById('loading').style.display = "none";
+        document.getElementById('arrival').style.display = "none";
         document.getElementById('hideablePlayer').style.display = "block";
         document.getElementById('watched').style.display = "none";
       }
@@ -79,7 +85,7 @@
         player = new YT.Player('player', {
           videoId: videoId,
           playerVars: {
-            autoplay: 1,
+            autoplay: 0,
             loop: 0,
             controls: 0,
             rel: 0,
@@ -100,9 +106,8 @@
             },
             onReady: function() {
               console.log("Ready!", arguments, player.getPlayerState())
-              if(player.getPlayerState() === YT.PlayerState.PLAYING) {
-                playing()
-              }
+              document.getElementById('loading').style.display = "none";
+              document.getElementById('loaded').style.display = "block";
             }
           }
         });
