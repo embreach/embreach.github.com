@@ -16,6 +16,13 @@ body {
   text-transform: uppercase;
 }
 
+.smaller {
+  font-size: 0.75em;
+  padding-top: 0.75em;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+}
+
 section {
   position: absolute;
   width: 100%;
