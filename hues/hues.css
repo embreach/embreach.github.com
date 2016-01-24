@@ -1,5 +1,5 @@
 body {
-    background: url('/static/bg_image.jpg') no-repeat #111;
+    background: url('bg_image.jpg') no-repeat #111;
 	background-attachment:fixed;
     text-align: center;
 	font-family: Arial, sans-serif;
@@ -20,25 +20,25 @@ section {
     margin-left: -15px;
 }
 
-.special-text { 
+.special-text {
     color: #b85744;
 }
 
-a, a:visited { 
+a, a:visited {
     color: #518085;
 }
 
-#wallpaper { 
+#wallpaper {
     text-decoration: none;
-    color: #605f53 !important; 
-    float: right; 
+    color: #605f53 !important;
+    float: right;
     padding-right: 5px;
     letter-spacing: 0.9px;
     font-weight: 90%;
 }
 
 h1,h2,h3 {
-    font-size: 28px; 
+    font-size: 28px;
     font-weight: normal;
     letter-spacing: 2px;
 }
@@ -53,7 +53,7 @@ h3 { font-size: 16px; margin-top: 20px; margin-bottom: 5px;}
 }
 */
 
-div.grid { 
+div.grid {
     float: left;
     height: 80px;
     width: 250px;
@@ -65,13 +65,13 @@ div.grid a {
     display: block;
     text-decoration: none;
 }
-p { 
+p {
     font-size: 13px;
     line-height: 150%;
     letter-spacing: 1.5px;
 }
 
-footer { 
+footer {
     clear: both;
     padding-top: 15px;
     margin-bottom: 30px;
