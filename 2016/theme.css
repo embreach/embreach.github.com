@@ -23,6 +23,17 @@ h1 {
   background-position: center;
 }
 
+.tuska {
+  display: block;
+  margin-top: 50px;
+  height: 200px;
+  color: transparent;
+  background-size: contain;
+  background-image: url('tuska.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .links a {
   text-decoration: none;
   font-size: 20px;
